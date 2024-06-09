@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var environment = {\n  production: true,\n  apiUrl: \"http://porject-app-env.eba-umcmtsmg.us-east-1.elasticbeanstalk.com/api\"\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

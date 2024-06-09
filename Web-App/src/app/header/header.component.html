@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  
+   <span *ngIf="userIsAuthenticated"><a routerLink="/admin">Message List</a> </span>
+   <span>
+    <a routerLink=""><img src="/assets/logo.svg" alt="logo"></a>
+   </span>
+   <span class="spacer"></span>
+   
+   <ul>
+   
+    <li *ngIf="!userIsAuthenticated"><a routerLink="">Home</a></li>
+    <li *ngIf="!userIsAuthenticated"><a routerLink="/service">Service</a></li>
+    <li *ngIf="!userIsAuthenticated"><a routerLink="/contact">Contact</a></li>
+    <li *ngIf="!userIsAuthenticated"><a routerLink="/create">Schedule Appointment</a>
+      <li *ngIf="!userIsAuthenticated"><a routerLink="/login"></a>  
+        <li *ngIf="!userIsAuthenticated"><a routerLink="/signup"></a>
+        <li *ngIf="userIsAuthenticated">
+          <button (click)="onLogout()" mat-button>Logout</button></li>
+
+   
+   </ul>
+   
+  </mat-toolbar> 

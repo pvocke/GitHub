@@ -1,0 +1,55 @@
+
+<mat-grid-list [cols]="isMobile ? 1 : 2" cols="2" rowHeight="3:3">
+  <mat-grid-tile style="display:grid;">
+    <mat-grid-tile-header style="font-weight: bold; font-size: x-large; color: #000; background-color: white;  ">Address:</mat-grid-tile-header>
+  <ul>
+    <li>Located in:</li>
+    <li>Frenchtown NJ 08825</li>
+    <li>(908)-531-6538</li>
+  </ul>
+  </mat-grid-tile>
+  <mat-grid-tile>
+  
+    <mat-grid-tile-header style="font-weight: bold; font-size: x-large; color: #000; background-color: white;  ">Contact Form</mat-grid-tile-header>
+    <form [formGroup]= "contactForm" class="form-group">
+  
+      <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  
+  <small *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">Name is required</small>
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter your email</mat-label>
+      <input matInput
+             placeholder="pat@example.com"
+             formControlName="email"
+             required>
+      
+    </mat-form-field>
+    <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">Email is required</small>
+  </div>
+
+  <small *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid">Subject is required</small>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message"></textarea>
+  </mat-form-field>
+  <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">Message is required</small>
+  
+  <button type="reset" mat-raised-button color="primary" [disabled]="contactForm.invalid" (click)="submitData(contactForm.value)">Send Message</button>
+  
+  <p *ngIf="isSubmit" class="submitMessage"> {{ submitMessage }}</p>
+  </form>
+
+</mat-grid-tile>
+</mat-grid-list>
+<!-- 
+  <div id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.690723097722!2d-75.00858152266046!3d40.526326571422196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c4099b06ab8939%3A0x7a333e920f74ab95!2s1054%20County%20Road%20519%2C%20Frenchtown%2C%20NJ%2008825!5e0!3m2!1sen!2sus!4v1717207727248!5m2!1sen!2sus"
+     width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  -->
+
+  

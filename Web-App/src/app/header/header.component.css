@@ -1,0 +1,29 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+.spacer {
+    flex : 1 1 auto;
+}
+
+img {
+    float: left;
+    width: 200px;
+    height: 200px;
+   
+  }
+  mat-toolbar {
+    height:5em;
+  }
