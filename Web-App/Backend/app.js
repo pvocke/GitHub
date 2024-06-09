@@ -2,6 +2,7 @@ const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+mongoose.set("strictQuery", false);
 
 const postsRoutes = require("./routes/posts");
 const usersRoutes = require("./routes/user")
